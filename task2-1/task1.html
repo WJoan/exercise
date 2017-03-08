@@ -26,9 +26,10 @@
     var inputAqi = document.getElementById("aqi-input");
     var display = document.getElementById("aqi-display");
 
-    if(!inputAqi)      return false;
-    if(!display)  return false;
-
+    if( !display )    return false;
+    if( !inputAqi )   return false;
+    if( !inputAqi.value ) display.innerHTML = "尚无录入";
+    
     display.innerHTML = inputAqi.value;
   }
 
