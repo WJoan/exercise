@@ -28,8 +28,8 @@
 
     if( !display )    return false;
     if( !inputAqi )   return false;
-    if( !inputAqi.value ) display.innerHTML = "尚无录入";
-    
+    if( inputAqi.value == "" ) display.innerHTML = "尚无录入";
+
     display.innerHTML = inputAqi.value;
   }
 
