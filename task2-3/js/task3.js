@@ -35,7 +35,7 @@ function sortAqiData(data) {
  * 格式见ul中的注释的部分
  */
 function render(data) {
-  var uList = document.getElementById("source");
+  var uList = document.getElementById("resort");
 
   for(let i = 0; i < data.length; i++){
     var num = ["一", "二", "三", "四", "五", "六", "七", "八", "九"];
