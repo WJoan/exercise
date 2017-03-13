@@ -1,0 +1,28 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#inout, #display {
+	margin: 20px;
+}
+
+input {
+	height: 1.8em;
+}
+
+button {
+	width: 5em;
+	height: 2em;
+	border-radius: 10px;
+}
+
+.element {
+	display: inline-block;
+	margin-right: 5px;
+	padding: 8px;
+	border-radius: 5px;
+	background-color: red;
+	color: #ffffff;
+	font-weight: bolder;
+}
