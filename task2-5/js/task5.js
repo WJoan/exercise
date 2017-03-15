@@ -25,7 +25,15 @@
  
  	var display = document.getElementById("display");
  	var inputNode = document.getElementsByTagName("input")[0];
- 	var num = inputNode.value;
+ 	
+ 	if(arguments.length == 2) {
+ 		var num = arguments[0];
+ 		var addType = arguments[1];
+ 	}
+ 	else {
+ 		var num = inputNode.value;
+ 		var addType = this.id;
+ 	}
  	// 点击后输入框清空并重获焦点
  	inputNode.value = "";
  	inputNode.focus();
@@ -40,7 +48,7 @@
  	}
  	// 创建新节点
  	var numDiv = createNumber(num);
- 	var addType = this.id;
+ 	
  	// 从左侧加入
  	if( addType == "left-in" ){
  		if( display.firstChild ){
@@ -102,25 +110,51 @@ function getNumbers(){
 	return numList;
 }
 
-/**
- * bubbleSort
- * 冒泡排序
- */
-function bubbleSort( numbers ){
-	var outer = 0;
-	var inner = 0;
 
-	if( !numbers ) return [];
-	for(outer = 1; outer < numbers.length; outer++){
-		for(inner = 0; inner < numbers.length - outer; inner++){
-			if( numbers[inner] > numbers[inner + 1]){
-				[ numbers[inner], numbers[inner + 1] ] = [ numbers[inner + 1], numbers[inner] ];
-				displayNodes(numbers);
+
+/**
+ * sortAnimation
+ * 排序动画
+ */
+function sortAnimation(){
+	var numbers = getNumbers();
+	var outer = 1;
+	var len = numbers.length;
+	if( numbers.length == 0 ) return alert("队列中没有数字");
+
+	/**
+	 * bubbleSort
+	 * 冒泡排序，找到当前最大值并加入到队列最后
+	 */
+	function bubbleSort( numbers ){	
+		var inner = 0;
+
+		//for(outer = 1; outer < numbers.length; outer++){
+			for(inner = 0; inner < numbers.length - outer; inner++){
+				if( numbers[inner] > numbers[inner + 1]){
+					[ numbers[inner], numbers[inner + 1] ] = [ numbers[inner + 1], numbers[inner] ];
+					displayNodes(numbers);
+				}
 			}
+		//}
+
+		outer++;
+	}
+
+	/**
+	 * show
+	 * 每500ms显示一次当前排序数组
+	 */
+	function show(){
+		bubbleSort( numbers );
+		if( outer < len ){
+			setTimeout(function(){
+				show();
+			}, 500);
 		}
 	}
-	
-	return numbers;
+
+	show();
 }
 
 /**
@@ -146,8 +180,11 @@ function init() {
 	document.getElementById("right-in").onclick = addNumber;
 	document.getElementById("left-out").onclick = removeNumber;
 	document.getElementById("right-out").onclick = removeNumber;
-	document.getElementById("sortBtn").onclick = function(){
-		bubbleSort( getNumbers() );
+	document.getElementById("sortBtn").onclick = sortAnimation;
+
+	// 初始化随机数据
+	for(var i = 0; i < 10; i++){
+		addNumber(Math.floor(Math.random()*(100-10)+10), "right-in");
 	}
 }
 
