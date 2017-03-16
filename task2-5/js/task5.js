@@ -38,6 +38,10 @@
  	inputNode.value = "";
  	inputNode.focus();
  	// 检查用户输入数字合法性
+ 	if(!Number(num)) {
+ 		alert("请输入符合要求的数字");
+ 		return false;
+ 	}
  	if(Number(num) < 10 || Number(num) > 100){
  		alert("请输入符合要求的数字");
  		return false;
