@@ -12,14 +12,21 @@
 * https://zhuanlan.zhihu.com/p/23155051
 * https://www.zhihu.com/question/34873227
 
-### JavaScript
+GitHub使用简介
+* http://www.worldhello.net/gotgithub/
+
+PSD切图技巧
+* http://www.imooc.com/learn/668
+
+
+### JavaScript语法
 JS 定时器
 * http://javascript.ruanyifeng.com/advanced/timer.html
 
 ### DOM基本操作
 * http://javascript.ruanyifeng.com/dom/node.html
 
-### CSS
+### CSS基本操作
 CSS三栏式布局的7种方法
 * https://zhuanlan.zhihu.com/p/25070186?refer=learncoding
 
