@@ -16,7 +16,6 @@
  	numDiv.onclick = function(){
  		this.remove();
  	};
-
  	return numDiv;
  }
 

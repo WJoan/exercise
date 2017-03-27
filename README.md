@@ -12,11 +12,15 @@
 * https://zhuanlan.zhihu.com/p/23155051
 * https://www.zhihu.com/question/34873227
 
+### 工具使用
 GitHub使用简介
 * http://www.worldhello.net/gotgithub/
 
 PSD切图技巧
 * http://www.imooc.com/learn/668
+
+Sublime Text3 常用插件
+http://www.jianshu.com/p/edbc2a13494b
 
 
 ### JavaScript语法
@@ -40,8 +44,8 @@ CSS overflow:hidden清除浮动的原理
 CSS使用技巧
 * http://www.ruanyifeng.com/blog/2010/03/css_cookbook.html
 
-CSS定位详解
-* http://www.w3cplus.com/css/advanced-html-css-lesson2-detailed-css-positioning.html
+CSS float详解
+* http://www.jb51.net/web/73916.html
 
 CSS居中方案
 * https://css-tricks.com/centering-css-complete-guide/
