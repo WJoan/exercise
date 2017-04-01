@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- 引入 ECharts 文件 -->
+    <script src="echarts.js"></script>
+    <script type="text/javascript" src="jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="weather.js"></script>
+    <style type="text/css">
+    	.introduce {
+    		display: block;
+    		width: 600px;
+    		height: auto;
+    		margin: 10px auto;
+    		padding: 0.5em;
+    	}
+    	.introduce p {
+    		color: black;
+    		font-weight: 900;
+    		text-align: center;
+    	}
+    	.introduce a {
+    		text-decoration: none;
+    		color: #00bcd4;
+    	}
+    	.chart {
+    		float: left;
+    		width: 600px;
+    		height:400px;
+    		margin: 10px;
+    	}
+    </style>
+    <title>天气信息</title>
+</head>
+<body>
+	<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+	<div class="introduce">
+		<p>应用<a href="http://echarts.baidu.com/">ECharts</a>绘制折线图与柱状图</p>
+		<p>天气数据来源为<a href="https://www.caiyunapp.com/index.html">彩云天气</a></p>
+	</div>
+    <div class="chart" id="temp"></div>
+    <div class="chart" id="wind"></div>
+</body>
+</html>
