@@ -349,15 +349,29 @@ footer > .web-site {
 	height: 60px;
 }
 
-.cover span:nth-child(1) {
+.right-top > span:nth-child(1) {
+	position: absolute;
+	bottom: 10px;
+	left: 40px;
+	padding-left: 10px;
+	padding-top: 5px;
 	vertical-align: middle;
 	font-size: 26px;
 	line-height: 26px;
+	height: 1.5em;
 	color: #ffffff;
 	font-family: 'Micsoft YaHei';
-	border-left: 3px solid #72b16a;
+	border-left: 4px solid #769a4c;
 	z-index: 100;
 	opacity: 1;
+}
+
+.right-top > span:nth-child(2) {
+	position: absolute;
+	bottom: 10px;
+	left: 163px;
+	font-style: italic;
+	color: #769a4c;
 }
 
 .right-bottom .red-cover {
@@ -367,6 +381,32 @@ footer > .web-site {
 	background-color: #d45d5c;
 	float: left;
 	padding: 44px 16px 32px 16px;
+}
+
+.right-bottom > .content > p:before {
+	position: relative;
+	top: -20px;
+	left: -36px;
+	float: left;
+	height: 10px;
+	width: 36px;
+	content: "\201c";
+    font-size: 72px;
+    font-style: normal;
+    color: #d45d5c;
+}
+
+.right-bottom > .content > p:after {
+	position: relative;
+	float: right;
+	bottom: 5px;
+	right: 20px;
+	height: 20px;
+	width: 36px;
+	content: "\201d";
+    font-size: 72px;
+    font-style: normal;
+    color: #d45d5c;
 }
 
 .red-cover > .a {

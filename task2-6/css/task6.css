@@ -1,0 +1,43 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#inout, #display, #sortBtn {
+	margin: 20px;
+}
+
+/*  =inout   */
+input {
+	height: 1.8em;
+}
+
+button {
+	width: 5em;
+	height: 2em;
+	border-radius: 10px;
+}
+
+textarea {
+	display: block;
+	margin: 10px;
+	width: 200px;
+	height: 100px;
+}
+
+/*  =display   */
+#display {
+	display: flex;
+	align-items: flex-end;
+	height: 110px;
+}
+
+.element {
+	display: inline-block;
+	margin-right: 5px;
+	padding: 0.5em;
+	border-radius: 5px;
+	background-color: #F07474;
+	color: #ffffff;
+	font-weight: bolder;
+}
