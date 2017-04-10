@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RegExp Test</title>
+	<style type="text/css">
+		p {
+			margin: 0;
+		}
+		.container {
+			margin: 20px;
+			padding: 10px;
+			border: 1px solid black;
+			border-radius: 6px;
+			height: 100px;
+			font-size: 16px;
+			font-family: 'SumHei';
+		}
+
+		.input-error {
+			font-size: 0.6em;
+			color: #f44336;
+		}
+
+		.input-right {
+			font-size: 0.6em;
+			color: #8bc34a;
+		}
+
+		.regexp-check {
+			margin-top: 1em;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<form>
+			<div class="regexp-check">
+				<label>请输入电话号码  </label>
+				<input type="text" name="phone" placeholder="在此输入">
+				<p class="input-error" style="display: none;">输入不符合要求</p>
+				<p class="input-right" style="display: none;">输入符合要求</p>
+			</div>
+			<div class="regexp-check">
+				<label>请输入单词组 以空格隔开  </label>
+				<textarea name="words" placeholder="在此输入"></textarea>
+				<p class="input-error" style="display: none;">输入不符合要求</p>
+				<p class="input-right" style="display: none;">输入符合要求</p>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="regexp.js"></script>
+</body>
+</html>
