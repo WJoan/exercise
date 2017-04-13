@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="markdown.css">
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>在线Markdown编辑器</h1>
+      <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+          <textarea class="well" id="text-input" rows="10">支持标题、有序/无序列表、引用以及代码块</textarea>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+          <div class="well" id="preview"></div>
+        </div>
+      </div>
+    </div>
+    <script src="markdown.js"></script>
+    <script>
+        let text = document.getElementById("text-input");
+        text.oninput = md2html;
+    </script>
+  </body>
+</html>
