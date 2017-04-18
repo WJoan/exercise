@@ -22,7 +22,7 @@ let testPhone = function(){
  * @return {[type]} [description]
  */
 let testWords = function(){
-	let re = /\b(\w+)\b\s+\1\b/;
+	let re = /\b([A-Za-z]+)\b\s+\1\b/;
 
 	if( re.test(wordsInput.value) ){
 		let rightDiv = this.nextElementSibling.nextElementSibling;
