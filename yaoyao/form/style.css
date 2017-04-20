@@ -1,0 +1,70 @@
+.container {
+	position: relative;
+	margin: 0 auto;
+	padding: 2em 0;
+	width: 500px;
+}
+
+.user-form > label {
+	display: block;
+	float: left;
+	margin-right: 10px;
+	width: 50px;
+	height: 40px;
+
+	line-height: 40px;
+	font-size: 18px;
+	font-weight: 700;
+    text-align: left;
+}
+
+.user-form > input[type='text'] {
+	display: block;
+	float: left;
+	margin-right: 10px;
+	padding: 0.5em;
+	height: 18px;
+	width: 300px;
+
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.user-form > a {
+	display: block;
+	float: left;
+	margin-right: 10px;
+	padding: 0.5em;
+	height: 18px;
+	width: 50px;
+
+	color: #fff;
+	font-size: 16px;
+	font-weight: 700;
+	text-align: center;
+	background-color: #2f79ba;
+	border-radius: 5px;
+}
+
+.form-tips {
+	display: block;
+	float: left;
+	margin-right: 50px;
+	padding: 0.3em 0;
+
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.form-tips > .rule {color: #b5b4b4;}
+
+.form-tips > .error {color: red;}
+
+.form-tips > .right {color: green;}
+
+.input[class='error'] {border: 1px solid #ccc;}
+
+.input[class='error'] {border: 1px solid red;}
+
+.input[class='right'] {border: 1px solid green;}
