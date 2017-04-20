@@ -102,7 +102,7 @@ function queryKeyWords(){
 	var values = display.childNodes;
 	for(var i = 0; i < values.length; i++){
 		if(values[i].innerHTML.indexOf( query ) >= 0){
-			values[i].style.backgroundColor = '#ff9800';
+			values[i].className += ' highlight';
 		}
 		else{
 			values[i].className = 'element';
