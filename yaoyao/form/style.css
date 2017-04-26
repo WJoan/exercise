@@ -27,7 +27,6 @@
 	width: 300px;
 
 	font-size: 16px;
-	border: 1px solid #ccc;
 	border-radius: 5px;
 }
 
@@ -63,8 +62,8 @@
 
 .form-tips > .right {color: green;}
 
-.input[class='error'] {border: 1px solid #ccc;}
+.input-rule {border: 1px solid #ccc;}
 
-.input[class='error'] {border: 1px solid red;}
+.input-error {border: 1px solid red;}
 
-.input[class='right'] {border: 1px solid green;}
+.input-right {border: 1px solid green;}
