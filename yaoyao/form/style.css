@@ -30,12 +30,11 @@
 	border-radius: 5px;
 }
 
-.user-form > a {
+.user-form > input[type="button"] {
 	display: block;
 	float: left;
 	margin-right: 10px;
-	padding: 0.5em;
-	height: 18px;
+	height: 33px;
 	width: 50px;
 
 	color: #fff;
@@ -43,6 +42,7 @@
 	font-weight: 700;
 	text-align: center;
 	background-color: #2f79ba;
+	border-style: none;
 	border-radius: 5px;
 }
 
@@ -53,17 +53,17 @@
 	padding: 0.3em 0;
 
 	font-size: 14px;
-	font-weight: 600;
+	font-weight: 500;
 }
 
-.form-tips > .rule {color: #b5b4b4;}
+.form-tips > span[class="rule"] {color: #b5b4b4;}
 
-.form-tips > .error {color: red;}
+.form-tips > span[class*="error"] {color: red;}
 
-.form-tips > .right {color: green;}
+.form-tips > span[class="right"] {color: green;}
 
-.input-rule {border: 1px solid #ccc;}
+input[class="rule"] {border: 1px solid #ccc;}
 
-.input-error {border: 1px solid red;}
+input[class*="error"] {border: 1px solid red;}
 
-.input-right {border: 1px solid green;}
+input[class="right"] {border: 1px solid green;}

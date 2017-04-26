@@ -21,11 +21,12 @@
 		<h1>表单</h1>
 		<form class="user-form">
 			<label>名称</label>
-			<input type="text" name="user-name" id="user-name" class="input-rule">
-			<a>验证</a>
+			<input type="text" name="user-name" id="user-name">
+			<input type="button" value="验证" class="checkBtn">
 			<div class="form-tips">
 				<span id="rule" class="rule" style="display: none;">必填，长度为4~16个字符</span>
-				<span id="error" class="error" style="display: none;">姓名不能为空</span>
+				<span id="error-null" class="error-null" style="display: none;">姓名不能为空</span>
+				<span id="error-len" class="error-len" style="display: none;">长度不符合要求</span>
 				<span id="right" class="right" style="display: none;">名称格式正确</span>
 			</div>
 		</form>
