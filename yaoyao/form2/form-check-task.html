@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>表单（一）单个表单项的检验</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h1>任务描述</h1>
+		<ul class="description">
+			<li>如<a href="task_2_30_1.jpg">示例图</a>中所示，基于上一个任务，在页面中添加多个表单</li>
+			<li>校验规则：
+				<ol>
+					<li>表单获得焦点时，下方显示表单填写规则</li>
+					<li>表单失去焦点时校验表单内容</li>
+					<li>校验结果正确时，表单边框显示绿色，并在下方显示验证通过的描述文字</li>
+					<li>校验结果错误时，表单边框显示红色，并在下方显示验证错误的描述文字</li>
+					<li>点击提交按钮时，对页面中所有输入进行校验，校验结果显示方式同上。若所有表单校验通过，弹窗显示“提交成功”，否则显示“提交失败”</li>
+				</ol>
+			</li>
+		</ul>
+		<h1>表单</h1>
+		<form class="user-form">
+			<div class="name">
+				<label>名称</label>
+				<input type="text" id="name-input" class="name-input">
+				<div class="form-tips">
+					<span class="rule" style="display: none;">必填，长度为4~16个字符</span>
+					<span class="error-null" style="display: none;">姓名不能为空</span>
+					<span class="error" style="display: none;">长度不符合要求</span>
+					<span class="right" style="display: none;">名称格式正确</span>
+				</div>
+			</div>
+			<div class="password">
+				<label>密码</label>
+				<input type="password" id="password-input" class="password-input">
+				<div class="form-tips">
+					<span class="rule" style="display: none;">必填，由英文字母、数字或者“_”组成的8-20个字符</span>
+					<span class="error-null" style="display: none;">密码不能为空</span>
+					<span class="error" style="display: none;">不符合要求</span>
+					<span class="right" style="display: none;">密码可用</span>
+				</div>
+			</div>
+			<div class="password-again">
+				<label>密码确认</label>
+				<input type="password" id="password-again-input" class="password-again-input">
+				<div class="form-tips">
+					<span class="rule" style="display: none;">请再次输入密码</span>
+					<span class="error-null" style="display: none;">不能为空</span>
+					<span class="error" style="display: none;">密码不一致</span>
+					<span class="right" style="display: none;">密码可用</span>
+				</div>
+			</div>
+			<div class="email">
+				<label>邮箱</label>
+				<input type="email" id="email-input" class="email-input">
+				<div class="form-tips">
+					<span class="rule" style="display: none;">请填写您的邮箱</span>
+					<span class="error-null" style="display: none;">邮箱不能为空</span>
+					<span class="error" style="display: none;">请填写有效的邮箱地址</span>
+					<span class="right" style="display: none;">邮箱可用</span>
+				</div>
+			</div>
+			<div class="phone">
+				<label>手机</label>
+				<input type="text" id="phone-input" class="phone-input">
+				<div class="form-tips">
+					<span class="rule" style="display: none;">请填写您的手机号</span>
+					<span class="error-null" style="display: none;">手机号不能为空</span>
+					<span class="error" style="display: none;">手机号不正确</span>
+					<span class="right" style="display: none;">手机号可用</span>
+				</div>
+			</div>
+			<div class="form-submit-btn">
+				<input type="button" value="提交" id="checkBtn">
+			</div>
+		</form>
+	</div>
+<script type="text/javascript" src="form-check-task.js"></script>
+</body>
+</html>

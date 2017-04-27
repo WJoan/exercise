@@ -1,0 +1,74 @@
+.container {
+	position: relative;
+	margin: 0 auto;
+	padding: 2em 0;
+	width: 500px;
+}
+
+.user-form > div {
+	display: inline-block;
+	width: 83%;
+}
+
+label {
+	float: left;
+    margin-right: 10px;
+    width: 77px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: right;
+}
+
+input[type='text'], input[type='password'], input[type='email'] {
+	float: left;
+	margin-right: 10px;
+	padding: 0.5em;
+	height: 18px;
+	width: 300px;
+
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+
+input[type="button"] {
+	display: block;
+	float: right;
+	margin-right: 10px;
+	height: 33px;
+	width: 50px;
+
+	color: #fff;
+	font-size: 16px;
+	font-weight: 700;
+	text-align: center;
+	background-color: #2f79ba;
+	border-style: none;
+	border-radius: 5px;
+}
+
+.form-tips {
+	display: block;
+	margin-right: 77px;
+	padding: 0.3em 0;
+
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.form-tips > span[class="rule"] {color: #b5b4b4;}
+
+.form-tips > span[class*="error"] {color: red;}
+
+.form-tips > span[class="right"] {color: green;}
+
+input[class*="rule"] {
+	border: 1px solid blue;
+	box-shadow: 0 0 1px blue;
+}
+
+input[class*="error"] {border: 1px solid red;}
+
+input[class*="right"] {border: 1px solid green;}
