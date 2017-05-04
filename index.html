@@ -67,6 +67,16 @@
 					<p>正则表达式之简易markdown文件解析器</p>
 					<a href="nuomi/regexp_markdown/online-markdown-editor.html" onclick="return false;">demo</a>
 				</dd>
+				<dt><h2>其他</h2></dt>
+				<dd>
+					<p>EChart图表</p>
+					<a href="baidu_echarts/weather.html" onclick="return false;">demo</a>
+				</dd>
+				<dt><h2>背景动画</h2></dt>
+				<dd>
+					<p>particles</p>
+					<a href="particles/index.html" onclick="return false;">demo</a>
+				</dd>
 			</dl>
 		</div>
 	</div>
@@ -75,13 +85,15 @@
 	</div>
 </body>
 <script type="text/javascript">
-	let dlist = document.querySelector("dl");
+	let links = document.querySelectorAll("a");
 	let display = document.querySelector("iframe");
-	if(dlist && display){
-		dlist.addEventListener( 'click', function(e){
-			display.src =  e.target.href;
-			return false;
-		});
+	for(let link of links){
+		if(link && display){
+			link.addEventListener( 'click', function(e){
+				display.src =  e.target.href;
+				return false;
+			});
+		}
 	}
 </script>
 </html>
