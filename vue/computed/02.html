@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<meta name=description content="Vue test">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<title>Vue实例</title>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+	<!--计算属性 computed-->
+	<div id="example">
+  		<p>Original message: "{{ message }}"</p>
+  		<p>Computed reversed message: "{{ reversedMessage }}"</p>
+	</div>
+	<!--计算属性 computed 的 setter-->
+	<div id="example2">
+		<p>{{ fullName }}</p>
+	</div>
+	<!--观察 watchers-->
+	<div id="watch-example">
+  		<p>
+  			Ask a yes/no question:
+  			<input v-model="question">
+  		</p>
+ 		<p>{{ answer }}</p>
+	</div>
+	<script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+	<script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
+	<script src="02.js"></script>
+</body>
+</html>
