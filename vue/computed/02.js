@@ -1,12 +1,22 @@
+/**
+ * 当绑定数据变化时候，你可能还希望模板中的数据，
+ * 或者说前端显示的数据稍微处理一下再显示，
+ * 这个时候你就要用到 computed 这个属性了。
+ * 计算属性只有在它的相关依赖发生改变时才会重新求值。
+ * 这就意味着只要 computed 使用到的绑定数据还没有发生改变，
+ * 多次访问 computed 属性会立即返回之前的计算结果，而不必再次执行函数。
+ */
 var vm = new Vue({
   el: '#example',
   data: {
-    message: 'Hello'
+    message: 'Hello',
+    compute: 'lalala'
   },
   computed: {
     // a computed getter
     reversedMessage: function () {
       // `this` points to the vm instance
+      alert(this.compute);
       return this.message.split('').reverse().join('')
     }
   }
@@ -36,6 +46,11 @@ var vm2 = new Vue({
 
 vm2.fullName = 'John Doe';
 
+/**
+ *  Vue 提供一个更通用的方法通过 watch 选项，来响应数据的变化。
+ *  当你想要在数据变化响应时，执行异步操作或开销较大的操作，这是很有用的。
+ *  watch 使得某一个绑定发生变化的时候就能够执行响应的操作。
+ */
 var watchExampleVM = new Vue({
   el: '#watch-example',
   data: {
