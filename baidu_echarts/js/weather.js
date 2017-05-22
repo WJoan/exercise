@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 	//获取天气数据
-	var url = "https://api.caiyunapp.com/v2/qdtgU5C6Bhvmmxoa/121.6544,25.1552/forecast.jsonp?callback=?"
+	var url = "https://api.caiyunapp.com/v2/qdtgU5C6Bhvmmxoa/116.4009,39.9033/forecast.jsonp?callback=?"
 	$.getJSON( url, displayWeather);
 
 	function displayWeather(data){
@@ -58,7 +58,6 @@ $(document).ready(function(){
 		            type: 'value',
 		            name: '降雨强度',
 		            min: 0,
-		            max: 3,
 		            interval: 0.6,
 		            axisLabel: {
 		                formatter: '{value}'
