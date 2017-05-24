@@ -7,19 +7,25 @@
         {{ item.label }}
       </li>
     </ul>
+    <p>child tells me:{{ childWords }}</p>
+    <component-a msgfromfather='father' @child-tell-me="listenToMyBoy"></component-a>
   </div>
 </template>
 
 <script>
 import Store from './store'
+import ComponentA from './components/ComponentA.vue'
+
 export default {
   data: function() {
     return {
       title: 'Todo list',
       items: Store.fetch(),
       newItem: '',
+      childWords: '',
     }
   },
+  components: { ComponentA },
   watch: {
     items: {
       handler: function(val, oldVal){
@@ -38,6 +44,9 @@ export default {
         isFinished: false
       });
       this.newItem = '';
+    },
+    listenToMyBoy : function (msg) {
+      this.childWords = msg;
     }
   }
 }
