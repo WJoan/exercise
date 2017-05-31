@@ -51,7 +51,7 @@ let dropDownNav = function (data) {
 
 // 初始化一个导航栏
 let navDom = document.getElementById('content');
-	navDom.innerHTML = dropDownNav([
+let navLinks = [
 			{
 				href: 'http://www.baidu.com/',
 				title: '百度一下',
@@ -77,4 +77,6 @@ let navDom = document.getElementById('content');
 					}
 				]
 			},
-		])
+		];
+
+navDom.innerHTML = dropDownNav(navLinks);
