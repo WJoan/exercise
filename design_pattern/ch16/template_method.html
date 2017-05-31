@@ -21,36 +21,6 @@
 	</nav>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="template_method.js"></script>
-<script type="text/javascript">
-	let nav = document.getElementById('content');
-	nav.innerHTML = dropDownNav([
-			{
-				href: 'http://www.baidu.com/',
-				title: '百度一下',
-				name: '百度'
-			},
-			{
-				href: 'http://www.taobao.com/',
-				title: '淘宝商城',
-				name: '淘宝'
-			},
-			{
-				name: '腾讯',
-				links: [
-					{
-						href: 'http://www.baidu.com/',
-						title: '百度一下',
-						name: '百度'
-					},
-					{
-						href: 'http://www.taobao.com/',
-						title: '淘宝商城',
-						name: '淘宝'
-					}
-				]
-			},
-		])
-</script>
+<script src="nav.js"></script>
 </body>
 </html>
