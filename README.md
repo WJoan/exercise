@@ -18,4 +18,4 @@
 
 [炫酷粒子动画](https://wjoan.github.io/exercise/particles/index.html)
 
-[简易的导航组件](https://wjoan.github.io/design_pattern/ch16/template_method.html)
+[简易的导航组件](https://wjoan.github.io/exercise/design_pattern/ch16/template_method.html)
