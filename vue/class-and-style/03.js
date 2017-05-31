@@ -2,6 +2,7 @@
  * 绑定 class 的时候，只能使得某一种 class 属性出现或者不出现
  * 绑定 style 内联样式的时候，可以在 Vue 属性中通过 js 设置具体的样式
  */
+
 var app1 = new Vue({
   el: '#app1',
   data: {
