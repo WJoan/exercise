@@ -19,66 +19,39 @@
 			display: block;
 			padding: 1em;
 		}
-		.display {
-			width: 100%;
-			height: 100%;
-		}
-
-		dd > p {
-			display: inline-block;
-		}
 	</style>
 </head>
 <body>
 	<div class="container">
 		<div class="index">
 			<ul>
-				<li>数组排序
-					<a href="binbin/task2-5/task5.html" onclick="return false;">  demo</a>
-					<a href="binbin/task2-5/task5.html">  url</a>
+				<li>
+					<a href="baidu_ife/binbin/task2-5/task5.html">数组排序</a>
 				</li>
-				<li>数组查询
-					<a href="binbin/task2-6/task6.html" onclick="return false;">  demo</a>
-					<a href="binbin/task2-6/task6.html">  url</a>
+				<li>
+					<a href="baidu_ife/binbin/task2-6/task6.html">数组查询</a>
 				</li>
-				<li>简易的 Markdown 在线解析器
-					<a href="nuomi/regexp_markdown/online-markdown-editor.html" onclick="return false;">  demo</a>
-					<a href="nuomi/regexp_markdown/online-markdown-editor.html">  url</a>
+				<li>
+					<a href="baidu_ife/nuomi/regexp_markdown/online-markdown-editor.html">简易的 Markdown 在线解析器</a>
 				</li>
-				<li>天气查询
-					<a href="baidu_echarts/weather.html" onclick="return false;">  demo</a>
-					<a href="baidu_echarts/weather.html">  url</a>
+				<li>
+					<a href="echarts/weather.html">天气查询</a>
 				</li>
-				<li>简易时钟
-					<a href="baidu_echarts/clock.html" onclick="return false;">  demo</a>
-					<a href="baidu_echarts/clock.html">  url</a>
+				<li>
+					<a href="echarts/clock.html">简易时钟</a>
 				</li>
-				<li>三栏布局
-					<a href="xiaowei/task1-3/task-3.html"> url</a>
+				<li>
+					<a href="baidu_ife/xiaowei/task1-3/task-3.html">三栏布局</a>
 				</li>
-				<li>博客排版
-					<a href="xiaowei/task1-5/task-5.html"> url</a>
+				<li>
+					<a href="baidu_ife/xiaowei/task1-5/task-5.html">博客排版</a>
 				</li>
-				<li>报纸排版
-					<a href="xiaowei/task1-6/task1-6.html"> url</a>
+				<li>
+					<a href="baidu_ife/xiaowei/task1-6/task1-6.html">报纸排版</a>
 				</li>
 			</ul>
 		</div>
 	</div>
-	<div class="container">
-		<iframe class="display" src="" frameborder="no" border="0"  marginwidth="0" marginheight="0" allowtransparency="yes"></iframe>
-	</div>
 </body>
-<script type="text/javascript">
-	let links = document.querySelectorAll("a");
-	let display = document.querySelector("iframe");
-	for(let link of links){
-		if(link && display){
-			link.addEventListener( 'click', function(e){
-				display.src =  e.target.href;
-				return false;
-			});
-		}
-	}
-</script>
+
 </html>

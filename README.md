@@ -6,9 +6,9 @@
 
 [简易的 Markdown 在线解析器](https://wjoan.github.io/exercise/baidu_ife/nuomi/regexp_markdown/online-markdown-editor.html)
 
-[气象图表](https://wjoan.github.io/exercise/baidu_echarts/weather.html)
+[气象图表](https://wjoan.github.io/exercise/echarts/weather.html)
 
-[简易时钟](https://wjoan.github.io/exercise/baidu_echarts/clock.html)
+[简易时钟](https://wjoan.github.io/exercise/echarts/clock.html)
 
 [三栏布局](https://wjoan.github.io/exercise/baidu_ife/xiaowei/task1-3/task-3.html)
 
