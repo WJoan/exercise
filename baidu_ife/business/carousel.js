@@ -95,8 +95,6 @@ for (var i = 0; i < btns.length; i++) {
 		index = desIndex;
 		showButton();
 	});
-
-	btns[i].addEventListener('mouseover', stopMove );
 }
 
 container.addEventListener('mouseover', stopMove );
