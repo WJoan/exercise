@@ -5,6 +5,8 @@ let prev = document.getElementById("arrowLeft");
 let next = document.getElementById("arrowRight");
 
 let index = 0;
+let animated = false;
+let timer;
 
 let moveImg = function (offset) {
 	let getLeft = () => parseInt(imgList.style.left);
@@ -13,6 +15,7 @@ let moveImg = function (offset) {
 	let interval = 10;	// 位移间隔时间
 	let speed = offset / (time/interval);	// 每次位移量
 
+	animated = true;
 	function go() {
 		if((speed < 0 && getLeft() > newLeft) || (speed > 0 && getLeft() < newLeft)){
 			imgList.style.left = getLeft() + speed + 'px';
@@ -20,6 +23,12 @@ let moveImg = function (offset) {
 		}
 		else{
 			imgList.style.left = newLeft + 'px';
+			if( getLeft() > -1024 ) {
+				imgList.style.left = -5120 + 'px';
+			}else if ( getLeft() < -5120 ) {
+				imgList.style.left = -1024 + 'px';
+			}
+			animated = false;
 		}
 	}
 	go();
@@ -36,28 +45,59 @@ let showButton = function () {
 	btns[index].className = 'on';
 }
 
+let autoMove = function () {
+	timer = setInterval( () => next.click(), 3000 );
+}
+
+let stopMove = function () {
+	clearInterval(timer);
+}
+
 // 下一张
-next.addEventListener('click', function(){
-	if( parseInt(imgList.style.left) < -4096){
-		imgList.style.left = -1024 + 'px';
-		index = 0;
-		showButton();
-	}else {
-		moveImg(-1024);
-		index += 1;
-		showButton();
+next.addEventListener('click', () => {
+	if( index == 4){		
+		index = 0;		
 	}
+	else {
+		index += 1;
+	}
+
+	if( animated ) return;
+
+	showButton();
+	moveImg(-1024);
 });
 
 // 上一张
-prev.addEventListener('click', function(){
-	if( parseInt(imgList.style.left) > -1024 ){
-		imgList.style.left = -5120 + 'px';
+prev.addEventListener('click', () => {
+	if( index == 0 ) {
 		index = 4;
-		showButton();
-	}else {
-		moveImg(1024);
+	} 
+	else {	
 		index -= 1;
-		showButton();
 	}
+
+	if( animated ) return;
+
+	showButton();
+	moveImg(1024);
 });
+
+
+for (var i = 0; i < btns.length; i++) {
+	btns[i].addEventListener('click', function(){
+		let desIndex = parseInt( this.getAttribute("data-index") );
+
+		if( desIndex == index ) return false;
+		
+		moveImg(-1024 * ( desIndex - index ) );
+
+		index = desIndex;
+		showButton();
+	});
+
+	btns[i].addEventListener('mouseover', stopMove );
+}
+
+container.addEventListener('mouseover', stopMove );
+container.addEventListener('mouseout', autoMove );
