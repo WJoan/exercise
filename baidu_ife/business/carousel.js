@@ -102,7 +102,7 @@ prev.addEventListener('click', () => {
 // 为圆点绑定点击事件
 for (var i = 0; i < btns.length; i++) {
 	// 点击切换图片
-	btns[i].addEventListener('click', () => {
+	btns[i].addEventListener('click', function () {
 		let desIndex = parseInt( this.getAttribute("data-index") );
 
 		// 判断当前图片是否为要切换的图片
