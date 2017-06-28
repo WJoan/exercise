@@ -5,9 +5,15 @@
  */
 function myCanvas(canvas){
 	const c = document.getElementById(canvas);
-	if(c === null) {
+	// 未能找到该DOM对象
+	if(!c) {
 		console.log("[error] can not find id \'" + canvas + "\'" );
-		return c;
+		return null;
+	}
+	// 引用了错误的DOM对象
+	if (!c.getContext){
+		console.log("[error] getContext is undefined" );
+		return null;
 	}
 
 	const ctx = c.getContext("2d");
@@ -21,7 +27,7 @@ function myCanvas(canvas){
 	// 半径
 	const radius = centerX*0.9;
 
-	let drawPoint = function (x,y,n) {
+	const drawPoint = function (x,y,n) {
 		ctx.lineWidth = 1;
 		for(let i = n; i > 0; i --){
 			ctx.beginPath();
@@ -31,7 +37,7 @@ function myCanvas(canvas){
 		}
 	};
 
-	let drawCircle = function (r, lineWidth=1, color="#090") {
+	const drawCircle = function (r, lineWidth=1, color="#090") {
 		ctx.beginPath();
 		ctx.setLineDash([]);
 		ctx.arc(centerX,centerY,r,0,2*Math.PI);
@@ -40,7 +46,7 @@ function myCanvas(canvas){
 		ctx.stroke();
 	};
 
-	let drawSector = function (sAngle, eAngle) {
+	const drawSector = function (sAngle, eAngle) {
 		let blob = 50;
 		let increase = 0;
 
@@ -76,7 +82,7 @@ function myCanvas(canvas){
 		} 
 	};
 
-	let Line = function (x, y, lineDash=[], color="#396a00", lineWidth=1) {
+	const Line = function (x, y, lineDash=[], color="#396a00", lineWidth=1) {
 		ctx.beginPath();
 		ctx.setLineDash(lineDash);
 		ctx.moveTo(centerX,centerY);
@@ -86,7 +92,7 @@ function myCanvas(canvas){
 		ctx.stroke();
 	};
 
-	let init = function () {
+	const init = function () {
 		// 背景上填充为黑色
 		ctx.fillStyle = "black";
 		ctx.fillRect(0,0,cWidth,cHeight);
@@ -109,23 +115,35 @@ function myCanvas(canvas){
 		drawCircle(0.3*centerY);
 	};
 
-	let clear = function () {
-			ctx.clearRect(0,0,cWidth,cHeight); 
-	};
-
-	let radar = {
+	return {
+		animID: undefined,
+		points: [
+			[cWidth/3,cHeight*3/7],
+			[cWidth*4/5, cHeight*6/9]
+		],
+		addPoints (x,y) {
+			this.points.push([x,y]);
+		},
+		clear () {
+			cancelAnimationFrame(animID);		// 停止动画
+			ctx.clearRect(0,0,cWidth,cHeight);  // 清除画布
+			this.points = [[cWidth/3,cHeight*3/7],[cWidth*4/5, cHeight*6/9]];	// 重置默认点
+		},
 		scan () {
 			let angle = Math.PI/4;
 			let scanBegin = 0;
 			let scanEnd = angle;
 			let pointRadius = 1;
 			// 绘制雷达扫描
-			let move = function () {
-				clear();		// 清除画布
-				init();			// 重绘背景
+			let move =  () => {
+				ctx.clearRect(0,0,cWidth,cHeight);  // 清除画布
+				init();								// 重绘背景
 				drawSector(scanBegin, scanEnd);		// 绘制扇形扫描区域
-				drawPoint(cWidth/3, cHeight*3/7, pointRadius);	// 绘制发光点
-				drawPoint(cWidth*4/5, cHeight*6/9, pointRadius);
+				// drawPoint(cWidth/3, cHeight*3/7, pointRadius);	// 绘制发光点
+				// drawPoint(cWidth*4/5, cHeight*6/9, pointRadius);
+				for(let p of this.points){
+					drawPoint(p[0], p[1], pointRadius);
+				}
 				// 改变点的半径以及扇形的角度
 				pointRadius += 0.08;
 				scanBegin += angle/25;
@@ -135,7 +153,7 @@ function myCanvas(canvas){
 					scanBegin = 0;
 					scanEnd = scanBegin + angle;
 				}
-				if(pointRadius >= 6) pointRadius = 0;
+				if(pointRadius >= 7) pointRadius = 0;
 				// 再次绘制
 				animID = window.requestAnimFrame(move);
 			}
@@ -158,11 +176,9 @@ function myCanvas(canvas){
 		}
 	}
 
-	return radar;
 }
 
 
 let radar = myCanvas("myCanvas");
-//radar.addPoint(200, 100);
 if(radar)	radar.scan();
  
