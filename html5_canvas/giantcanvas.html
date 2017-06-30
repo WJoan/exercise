@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>巨型画布</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		canvas {
+			border: 1px black solid;
+			margin-right: 2%;
+		}
+
+		#thumbnail {
+			display: inline-block;
+			position: relative;
+		}
+
+		img {
+			max-width: 240px;
+			max-height: 150px;
+		}
+
+		#rangeBox {
+			position: absolute;
+			left: 0;
+			top: 0;
+			border: 1px #9e9e9e solid;
+			background-color: rgba(0,0,0,0.03);
+			max-width: 240px;
+			max-height: 150px;
+		}
+
+		.left {
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="giantCanvas" class="left" width="1024" height="768">浏览器不支持 Canvas</canvas>
+	<div id="thumbnail">
+		<img src="img.jpg" alt="The thumbnail" id="img">
+		<div id="rangeBox"></div>
+	</div>
+	<script type="text/javascript" src="js/gaintcanvas.js"></script>
+</body>
+</html>
