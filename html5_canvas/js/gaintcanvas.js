@@ -107,4 +107,4 @@ let app = function() {
 }
 
 let a = app()
-a.loadImg("../html5_canvas/bigImg.jpg");
+a.loadImg("../html5_canvas/img/bigImg.jpg");
