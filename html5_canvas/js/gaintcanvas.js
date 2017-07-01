@@ -10,9 +10,9 @@ let app = function() {
 	const thumbnailHeight = thumbnail.offsetHeight;
 
 	let img, imgWidth, imgHeight,
-			clientX,clientY,
+			clientX, clientY,
 			imgX = 0, imgY = 0,
-			isDrag = false;
+			isDrag = false, isDrawing = false;
 
 	// 部分参数初始化
 	function _init() {
@@ -43,7 +43,7 @@ let app = function() {
 	};
 
 	function _mousemove (e) {
-		if(!isDrag) return false;
+		if(!isDrag || isDrawing) return false;
 		// 计算位移
 		let offsetX, offsetY;
 		if(e.target == c){
@@ -56,8 +56,11 @@ let app = function() {
 		}
 		else {
 			isDrag = false;
+			isDrawing = false;
 			return;
 		}
+
+		isDrawing = true;
 		// 计算坐标
 		clientX = e.clientX;
 		clientY = e.clientY;
@@ -75,11 +78,13 @@ let app = function() {
 		ctx.clearRect(0,0, cWidth, cHeight);
 		ctx.drawImage(img, imgX, imgY, cWidth, cHeight, 0, 0, cWidth, cHeight);
 
+		isDrawing = false;
 	};
 
 	function _mouseup (e){
 		// 结束移动
 		isDrag = false;
+		isDrawing = false;
 	}
 
 	function _drawCircle(e){
@@ -102,4 +107,4 @@ let app = function() {
 }
 
 let a = app()
-a.loadImg("../html5_canvas/img.jpg");
+a.loadImg("../html5_canvas/bigImg.jpg");
