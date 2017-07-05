@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<meta name=description content="Vue test">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<title>Vue介绍</title>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+	<h1>Vue.js 介绍</h1>
+	<!--hello vue-->
+	<!--Vue.js 的核心是一个允许采用简洁的模板语法来声明式的将数据渲染进 DOM-->
+	<div id="app">
+	  {{ message }}
+	</div>
+	<!--绑定 DOM 元素属性-->
+	<div id="app-2">
+  		<span v-bind:title="message">
+    鼠标悬停几秒钟查看此处动态绑定的提示信息！
+  		</span>
+	</div>
+	<!--条件-->
+	<div id="app-3">
+  		<p v-if="seen">现在你看到我了</p>
+	</div>
+	<!--循环-->
+	<div id="app-4">
+	  <ol>
+	    <li v-for="todo in todos">
+	      {{ todo.text }}
+	    </li>
+	  </ol>
+	</div>
+	<!--绑定事件监听-->
+	<div id="app-5">
+  		<p>{{ message }}</p>
+ 		<button v-on:click="reverseMessage">逆转消息</button>
+	</div>
+	<!--双向绑定-->
+	<div id="app-6">
+  		<p>{{ message }}</p>
+  		<input v-model="message">
+	</div>
+	<!--组件模板-->
+	<div id="app-7">
+  		<ol>
+    		<!-- 现在我们为每个todo-item提供待办项对象    -->
+    		<!-- 待办项对象是变量，即其内容可以是动态的 -->
+    		<todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+  		</ol>
+  <a href="https://cn.vuejs.org/v2/guide/index.html">Go to >></a>
+</div>
+	<script src="01.js"></script>
+</body>
+</html>

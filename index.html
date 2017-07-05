@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+	<base target=_blank>
+
+	<title>前端练习</title>
+	<style type="text/css">
+		html, body {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url(img/pexels-photo-245618.jpeg);
+			background-size: 100vw 100vh;
+			background-repeat: repeat;
+		}
+
+		ul {padding: 0;}
+		li, a {
+			text-decoration: none;
+			list-style-type: none;
+			line-height: 1.8em;
+			color: inherit;
+		}
+
+		li:hover {
+			font-weight: bolder;
+			background-color: #000;
+		}
+
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 2em 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		.college {
+			display: block;
+			flex: 0 1 auto;
+			margin: 1em 4.5%;
+			padding: 1em 2%;
+			width: 20.3333%;
+			border-radius: 10px;
+			background-color: #fff;
+			overflow: hidden;
+		}
+
+		@media screen and (max-width: 1024px) {
+		    .college {
+		    	margin: 1em 3%;
+		    	padding: 1em 2%;
+		        width: 40%;
+		    }
+		}
+
+		@media screen and (max-width: 768px) {
+		    .college {
+		    	margin: 1em 4%;
+		    	padding: 1em 2%;
+		        width: 90%;
+		    }
+		}
+
+		.college > h2 {
+			margin: 0;
+			padding: 0.5em 0;
+			border-bottom: 1px solid #c7c7c7;
+		}
+
+		.xiaowei {
+			color: #f44336;
+		}
+
+		.binbin {
+			color: #ae7561;
+		}
+
+		.yaoyao {
+			color: #30b135;
+		}
+
+		.business {
+			color: #547198;
+		}
+
+		.nuomi {
+			color: #232163;
+		}
+
+		.other {
+			color: #9758a2;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="xiaowei college"><h2>小薇学院</h2>
+			<ul>
+			    <li><a href="baidu_ife/xiaowei/task1-1/task-1.html">零基础HTML编码</a></li>
+			    <li><a href="baidu_ife/xiaowei/task1-2/task-2.html">零基础HTML及CSS编码（一）</a></li>
+			    <li><a href="baidu_ife/xiaowei/task1-3/task-3.html">三栏式布局</a></li>
+			    <li><a href="baidu_ife/xiaowei/task1-4/task1-4.html">定位和居中问题</a></li>
+			    <li><a href="baidu_ife/xiaowei/task1-5/task-5.html">零基础HTML及CSS编码（二）</a></li>
+			    <li><a href="baidu_ife/xiaowei/task1-6/task1-6.html">模拟报纸排版</a></li>
+			    <!-- <li><a href="#">常见技术产品官网布局</a></li>
+			    <li><a href="#">响应式网格（栅格化）布局</a></li>
+			    <li><a href="#">使用HTML/CSS实现一个复杂页面</a></li> -->
+			    <li><a href="baidu_ife/xiaowei/task1-10/task10.html">Flex布局练习</a></li>
+			    <!-- <li><a href="#">移动Web页面布局实践</a></li>
+			    <li><a href="#">学习CSS 3的新特性</a></li> -->
+			</ul>
+		</div>
+		<div class="binbin college"><h2>斌斌学院</h2>
+			<ul>
+			    <li><a href="baidu_ife/binbin/task2-1/task1.html">零基础JavaScript编码（一）</a></li>
+			    <li><a href="baidu_ife/binbin/task2-2/task2.html">零基础JavaScript编码（二）</a></li>
+			    <li><a href="baidu_ife/binbin/task2-3/task3.html">零基础JavaScript编码（三）</a></li>
+			    <li><a href="baidu_ife/binbin/task2-4/task4.html">基础JavaScript练习（一）</a></li>
+			    <li><a href="baidu_ife/binbin/task2-5/task5.html">基础JavaScript练习（二）</a></li>
+			    <li><a href="baidu_ife/binbin/task2-6/task6.html">基础JavaScript练习（三）</a></li>
+			    <!-- <li>JavaScript和树（一）</li>
+			    <li>JavaScript和树（二）</li>
+			    <li>JavaScript和树（三）</li> -->
+			    <p style="color: #999">未完待续...</p> 
+			</ul>
+		</div>
+		<div class="yaoyao college"><h2>耀耀学院</h2>
+			<ul>
+			    <li><a href="baidu_ife/yaoyao/form/form-check-task.html">表单（一）单个表单项的检验</a></li>
+			    <li><a href="baidu_ife/yaoyao/form2/form-check-task.html">表单（二）多个表单项的动态校验</a></li>
+			    <!-- <li>表单（三）联动</li>
+			    <li>听指令的小方块（一）</li>
+			    <li>听指令的小方块（二）</li>
+			    <li>UI组件之浮出层</li>
+			    <li>UI组件之排序表格</li>
+			    <li>开源JavaScript库使用统计任务</li>
+			    <li>在线德州扑克</li> -->
+			    <p style="color: #999">未完待续...</p> 
+			</ul>
+		</div>
+		<div class="business college"><h2>商业平台&糯米</h2>
+			<ul>
+			    <li><a href="baidu_ife/business/carousel.html">自动循环轮播图</a></li>
+			    <li><a href="baidu_ife/nuomi/regexp/">正则表达式之入门</a></li>
+			    <li><a href="baidu_ife/nuomi/regexp_markdown/">正则表达式之简易markdown文件解析器</a></li>
+			    <li><a href="echarts/clock.html">Echarts 简易时钟</a></li>
+			    <li><a href="echarts/weather.html">Echarts 气象信息</a></li>
+			    <li><a href="html5_canvas/giantcanvas.html">巨型画布</a></li>
+			    <p style="color: #999">未完待续...</p> 
+			</ul>
+		</div>
+		<div class="other college"><h2>其他</h2>
+			<ul>
+			    <li><a href="html5_canvas/radar.html">canvas雷达扫描</a></li>
+			    <li><a href="html5_canvas/tree.html">canvas绘制一颗树</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+
+</html>

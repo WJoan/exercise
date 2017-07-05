@@ -16,8 +16,9 @@
 
 [报纸排版](https://wjoan.github.io/exercise/baidu_ife/xiaowei/task1-6/task1-6.html)
 
-[炫酷粒子动画](https://wjoan.github.io/exercise/particles/index.html)
+[canvas雷达扫描](https://wjoan.github.io/exercise/html5_canvas/radar.html)
 
-[简易的导航组件](https://wjoan.github.io/exercise/design_pattern/ch16/template_method.html)
+[canvas绘制一颗树](https://wjoan.github.io/exercise/html5_canvas/tree.html)
 
-[轮播图](https://wjoan.github.io/exercise/baidu_ife/business/carousel.html)
+[自动循环轮播图](https://wjoan.github.io/exercise/baidu_ife/business/carousel.html)
+

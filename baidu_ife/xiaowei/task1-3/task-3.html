@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>三栏式布局</title>
+	<base target="_blank" />
+	<link rel="stylesheet" type="text/css" href="css/task3.css">
+</head>
+<body>
+	<div class="container bg-grey">
+		<div class="main bg-white">
+			<h2>CSS 三栏式布局方法总结</h2>
+			<ol>
+				<li>流体布局</li>
+				<li>BFC 三栏布局</li>
+				<li>双飞翼布局</li>
+				<li>圣杯布局</li>
+				<li>Flex 布局</li>
+				<li>Table 布局</li>
+				<li>绝对定位布局</li>
+			</ol>
+			<p>个人认为流体布局以及绝对定位布局比较简单好用，但是flex布局能够应对各种复杂情况，
+			但是要注意浏览器的兼容问题。这个页面的三栏式布局就是采用了flex布局。</p>
+			<p><a href="https://zhuanlan.zhihu.com/p/25070186?refer=learncoding">详解 CSS 七种三栏布局技巧</a></p>
+			<h3>Flex布局</h3>
+			<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html">Flex 布局教程：语法篇</a>
+			<a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html">Flex 布局教程：实例篇</a>
+		</div>
+		<div class="left bg-white">
+			<div class="team-logo bg-grey"></div>
+			<p class="team-name">百度前端技术学院</p>
+		</div>
+		<div class="right bg-white">
+			<div class="person-logo bg-grey"></div>
+			<div class="person-logo bg-grey"></div>
+			<div class="person-logo bg-grey"></div>
+			<div class="person-logo bg-grey"></div>
+		</div>
+    </div>
+</body>
+</html>

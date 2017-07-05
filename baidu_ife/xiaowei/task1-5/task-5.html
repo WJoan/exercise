@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<title>前端笔记</title>
+	<meta charset="utf-8">
+	<meta name="author" content="joan">
+	<meta name="description" content="HTML & CSS exercise">
+	<link rel="stylesheet" type="text/css" href="css/task5.css">
+</head>
+<body>
+	<!-- 导航 -->
+	<header>
+		<div id="nav">
+			<h1>前端学习笔记</h1>
+			<ul>
+				<li><a href="#page1">第一周</a></li>
+				<li><a href="#page2">第二周</a></li>
+				<li><a href="#page3">第三周</a></li>
+				<li><a href="#column">第四周</a></li>
+			</ul>
+		</div>
+	</header>
+	<div id="container">
+		<!-- 文章 -->
+		<div id="article">
+			<div class="page" id="page1">
+				<h2>Github入门</h2>
+				<h3>安装与使用TortoiseGit</h3>
+				<h4>joan 2017/3/1</h4>
+				<p><b>TortoiseGit</b>是一个开放的git版本控制系统的源客户端，支持Winxp/vista/win7。
+				像一个普通的文件服务器,除了会记得您有史以来的文件和目录的每一个变化外,还可以恢复您的文件的旧版本,并研究如何以及何时改变了历史数据,谁改变了它。</p>
+				<a href="https://code.google.com/p/tortoisegit/wiki/Download?tm=2">点击下载</a>
+			</div>
+			<div class="page" id="page2">
+				<h2>百度前端基础学院</h2>
+				<h3>简介</h3>
+				<h4>joan 2017/3/2</h4>
+				<ol>公开课
+					<li>商业平台部</li>
+					<li>ECharts & WebVR学院</li>
+					<li>百度糯米</li>
+				</ol>
+				<table>
+					<tr>
+						<th>学院</th>
+						<th colspan="2">内容</th>
+					</tr>
+					<tr>
+						<td>小薇学院</td>
+						<td>HTML/CSS基础入门挑战</td>
+					</tr>
+					<tr>
+						<td>斌斌学院</td>
+						<td>JS基础</td>
+					</tr>
+					<tr>
+						<td>耀耀学院</td>
+						<td>基础入门综合练习挑战</td>
+					</tr>
+				</table>			
+				<figure>
+					<figcaption>好看的图片</figcaption>
+					<img src="images/404notfound.jpg">
+				</figure>
+				<figure>
+					<figcaption>好看的图片</figcaption>
+					<img src="images/404notfound.jpg">
+				</figure>
+			</div>
+			<div class="page" id="page3">
+				<h2>Taksk1</h2>
+				<h3>HTML与CSS基础</h3>
+				<h4>joan 2017/3/1</h4>
+				<ul>
+					<li>
+						<a href="https://www.zhihu.com/question/22689579">Web相关名词通俗解释</a>
+					</li>
+					<li>
+						<a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/Introduction">MDN HTML入门</a>
+					</li>
+				</ul>	
+				<figure>
+					<figcaption>头像</figcaption>
+					<img src="images/header.jpg" id="hepburn">
+				</figure>
+				<figure>
+					<figcaption>头像</figcaption>
+					<img src="images/header.jpg" id="hepburn">
+				</figure>
+				<figure>
+					<figcaption>头像</figcaption>
+					<img src="images/header.jpg" id="hepburn">
+				</figure>
+				<figure>
+					<figcaption>头像</figcaption>
+					<img src="images/header.jpg" id="hepburn">
+				</figure>
+				<figure>
+					<figcaption>头像</figcaption>
+					<img src="images/header.jpg" id="hepburn">
+				</figure>
+				<figure>
+					<figcaption>头像</figcaption>
+					<img src="images/header.jpg" id="hepburn">
+				</figure>
+				<figure>
+					<figcaption>头像</figcaption>
+					<img src="images/header.jpg" id="hepburn">
+				</figure>
+				<figure>
+					<figcaption>头像</figcaption>
+					<img src="images/header.jpg" id="hepburn">
+				</figure>
+				<figure>
+					<figcaption>头像</figcaption>
+					<img src="images/header.jpg" id="hepburn">
+				</figure>
+				<figure>
+					<figcaption>头像</figcaption>
+					<img src="images/header.jpg" id="hepburn">
+				</figure>
+			</div>
+		</div>
+		<!--侧栏-->
+		<div id="column">
+			<div class="page">
+				<h2>这是一个侧栏</h2>
+				<form>
+					<div class="line">
+						<label class="col-1">请输入邮箱地址</label>
+						<div class="col-2">
+							<input type="text" name="email" placeholder="邮箱地址"><br />
+						</div>
+					</div>
+					<div class="line">
+						<div class="col-2">
+							<span>邮箱地址请按要求格式输入</span>
+						</div>
+					</div>
+					<div class="line">
+						<label class="col-1">请输入密码</label>
+						<div class="col-2">
+							<input type="password" name="password" placeholder="密码">
+						</div>
+					</div>
+					<div class="line">
+						<label class="col-1">请重复输入密码</label>
+						<div class="col-2">
+							<input type="password" name="" placeholder="请重复输入密码"><br />
+						</div>
+					</div>
+					<div class="line">
+						<div class="col-2">
+							<span>密码为6-16位英文数字</span>
+						</div>
+					</div>
+					<div class="line">
+						<label class="col-1">性别</label>
+						<div  class="col-2">
+							<input type="radio" name="sex" value="male" checked>男
+							<input type="radio" name="sex" value="female">女
+						</div>
+					</div>
+					<div class="line">
+						<label class="col-1">城市</label>
+						<div class="col-2">
+							<select name="city">
+								<option value="Beijing">北京</option>
+								<option value="Tianjin">天津</option>
+								<option value="Wuhan">武汉</option>
+							</select>
+						</div>
+					</div>
+					<div class="line">
+						<label class="col-1">爱好</label>
+						<div class="col-2">
+							<input type="checkbox" name="hobby" value="sport">运动
+							<input type="checkbox" name="hobby" value="art">艺术
+							<input type="checkbox" name="hobby" value="science">科学
+						</div>
+					</div>
+					<div class="line">
+						<label class="col-1">个人描述</label>
+						<div class="col-2">
+							<textarea placeholder="请输入您的个人描述"></textarea>
+						</div>
+					</div>
+					<div class="line">
+						<input type="submit">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<footer><span>版权所有©</span></footer>
+</body>
+</html>
