@@ -88,20 +88,32 @@ let showRule = function(){
 	showTips( this ,'rule' );
 }
 
+let EventUtil = {
+		addHandler:function(element, type, handler){
+			if(element.addEventListener){
+				element.addEventListener(type, handler, false);
+			}else if(element.attachEvent){
+				element.attachEvent("on" + type, handler);
+			}else{
+				element["on" + type] = handler;
+			}
+		}
+};
+
 // 绑定
 let init = function(){
 	
 	for(let i = 0; i < inputs.length - 1; i++){
-		inputs[i].addEventListener('blur', checkInput, false);
-		inputs[i].addEventListener('focus', showRule, false);
+		EventUtil.addHandler(inputs[i], 'blur', checkInput);
+		EventUtil.addHandler(inputs[i], 'focus', showRule);
 	}
-	checkBtn.addEventListener('click', function(){
+	EventUtil.addHandler(checkBtn, 'click', function(){
 		for(let key in userInfo){
 			if(userInfo[key] == "")
 				return alert("输入有误！")
 		}
 		alert(JSON.stringify(userInfo).split(",").join("\n"));
-	})
+	});
 }
 
 init();
