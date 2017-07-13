@@ -22,13 +22,13 @@ let app = function() {
 		rangeBox.style.height = thumbnailHeight  * (cHeight / imgHeight) - 2 + 'px';
 	}
 
-	// 加载图片
+	// 加载图片				
 	function _drawDataURIOnCanvas(strDataURI, canvas) {
 	    img = new window.Image();
 	    img.addEventListener("load", function () {
 	    	 _init();
 	        canvas.getContext("2d").drawImage(img, imgX, imgY, cWidth, cHeight, 0, 0, cWidth, cHeight);
-	    });
+	    }, false);
 	    img.setAttribute("src", strDataURI);
 	};
 

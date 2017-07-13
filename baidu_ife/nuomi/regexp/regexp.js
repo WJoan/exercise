@@ -50,8 +50,8 @@ let removeAlertMeg = function() {
 let phoneInput =  document.querySelector('[name = phone]');
 let wordsInput = document.querySelector('[name = words]');
 
-phoneInput.addEventListener('blur', testPhone);
-phoneInput.addEventListener('focus', removeAlertMeg);
+phoneInput.addEventListener('blur', testPhone, false);
+phoneInput.addEventListener('focus', removeAlertMeg, false);
 
-wordsInput.addEventListener('blur', testWords);
-wordsInput.addEventListener('focus', removeAlertMeg);
+wordsInput.addEventListener('blur', testWords, false);
+wordsInput.addEventListener('focus', removeAlertMeg, false);

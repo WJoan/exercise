@@ -92,8 +92,8 @@ let showRule = function(){
 let init = function(){
 	
 	for(let i = 0; i < inputs.length - 1; i++){
-		inputs[i].addEventListener('blur', checkInput);
-		inputs[i].addEventListener('focus', showRule);
+		inputs[i].addEventListener('blur', checkInput, false);
+		inputs[i].addEventListener('focus', showRule, false);
 	}
 	checkBtn.addEventListener('click', function(){
 		for(let key in userInfo){

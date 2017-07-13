@@ -66,7 +66,8 @@ input[type="button"] {
 
 input[class*="rule"] {
 	border: 1px solid blue;
-	box-shadow: 0 0 1px blue;
+	-webkit-box-shadow: 0 0 1px blue;
+	        box-shadow: 0 0 1px blue;
 }
 
 input[class*="error"] {border: 1px solid red;}
