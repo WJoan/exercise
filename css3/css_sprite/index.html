@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CSS雪碧图</title>
+  <style type="text/css">
+    h3,ul{margin: 0;padding: 0}
+    ul{list-style: none;}
+    li h3{font-size: 14px;font-weight: 400}
+    li{
+      display: block;
+      height: 31px;
+      line-height: 31px;
+      overflow: hidden;
+      border-bottom: 1px solid #dedede;
+    }
+    li i{
+      background: url(sidebar.png);
+      display: inline;
+      width: 30px;
+      height: 24px;
+      float: left;
+      margin: 3px 10px 0 0 ;
+    }
+    .cat{
+      width: 150px;
+      background-color: #f8f8f8;
+      border: 1px solid #bbb;
+    }
+    .cat-1{background-position:0 0; }
+    .cat-2{background-position:0 -24px; }
+    .cat-3{background-position:0 -48px; }
+    .cat-4{background-position:0 -72px; }
+    .cat-5{background-position:0 -96px; }
+    .cat-6{background-position:0 -120px; }
+    .cat-7{background-position:0 -144px; }
+    .cat-8{background-position:0 -168px; }
+    .cat-9{background-position:-40px 0;}
+  </style>
+</head>
+<body>
+	<div class="cat">
+   <ul>
+       <li>
+         <i class="cat-1"></i>
+         <h3>服装内衣</h3>
+       </li>
+       <li>
+         <i class="cat-2"></i>
+         <h3>鞋包配饰</h3>
+       </li>
+       <li>
+         <i class="cat-3"></i>
+         <h3>运动户外</h3>
+       </li>
+       <li>
+         <i class="cat-4"></i>
+         <h3>珠宝手表</h3>
+       </li>
+       <li>
+         <i class="cat-5"></i>
+         <h3>手机数码</h3>
+       </li>
+       <li>
+         <i class="cat-6"></i>
+         <h3>办公家电脑</h3>
+       </li>
+       <li>
+         <i class="cat-7"></i>
+         <h3>护肤彩妆</h3>
+       </li>
+       <li>
+         <i class="cat-8"></i>
+         <h3>母婴用品</h3>
+       </li>
+       <li>
+         <i class="cat-9"></i>
+         <h3>其他分类</h3>
+       </li>
+   </ul> 
+  </div>
+</body>
+</html>

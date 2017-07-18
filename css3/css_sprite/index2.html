@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>用户登录</title>
+<style>
+    button,p,input[type=checkbox]{
+        margin:0;
+        padding:0;
+        border:0;
+        text-decoration:none;
+        list-style:none;
+    }
+    .login{
+        width:220px;
+        background-color: #ebf3fa;
+        font-size:12px;
+        padding: 10px 0;
+    }
+    .login .btn{
+        display: block;
+        background-image:url("http://img.mukewang.com/539a972b00013e9102280177.jpg");
+        width:190px;
+        height:38px;
+    }
+    .login>p{
+        width: 190px;
+        padding: 10px 15px;
+    }
+    .usr-input{
+        display:block;
+        padding: 0 20px;
+        width:148px;
+        height:30px;
+        border: 2px solid #ccc;
+        border-radius: 5%;
+    }
+    input[type=checkbox]{
+        vertical-align: middle;
+    }
+    .forget{
+        float:right;
+        text-decoration: none;
+    }
+    .login-btn{
+        background-position:0 0;
+    }
+    .reg-btn{
+        background-position:0 -38px;
+    }
+
+</style>
+</head>
+<body>
+<form class="login">
+    <p>
+        <input type="text" class="usr-input" placeholder="邮箱/手机号/用户名" name="usrname">
+    </p>
+    <p>
+        <input type="text" class="usr-input" placeholder="请输入密码" name="password">
+    </p>
+    <p>
+        <input type="checkbox">
+        <lable>下次自动登录</lable>
+        <a class="forget" href="#">忘记密码?</a>
+    </p>
+    <p>
+        <button class="login-btn btn"></button>
+    </p>
+    <hr/>
+    <p>
+        <button class="reg-btn btn"></button>
+    </p>
+</form>
+
+</body>
+</html>
