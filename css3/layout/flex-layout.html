@@ -3,7 +3,7 @@
 <head>
   <title>flex布局</title>
   <style type="text/css">
-    /*背景*/
+        /*背景*/
     * {
       margin: 0;
       padding: 0;
@@ -21,13 +21,19 @@
     /*主体样式*/
     .wrap {
       /*设置flex布局*/
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       /*纵向顶部对齐高度根据内容而定*/
-      align-items: flex-start;
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start;
     }
     .mian {
       /*横向可放大缩小但是有最小宽度*/
-      flex: 1 1 auto;
+      -webkit-box-flex: 1;
+          -ms-flex: 1 1 auto;
+              flex: 1 1 auto;
       min-width: 960px;
       height: 300px;
       background-color: #03a9f4;
@@ -35,14 +41,18 @@
     /*侧边栏*/
     .sidebar {
       /*横向不能放大缩小*/
-      flex: 0 0 auto;
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 auto;
+              flex: 0 0 auto;
       height: 200px;
       background-color: #673ab7;
     }
     /*左浮动*/
     .left {
       /*显示顺序*/
-      order: -1;
+      -webkit-box-ordinal-group: 0;
+          -ms-flex-order: -1;
+              order: -1;
       float: left;
       width: 130px;
     }
