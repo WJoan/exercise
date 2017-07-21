@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>三栏布局</title>
+  <style type="text/css">
+    /*背景*/
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .bg{
+      width: 100%;
+      background-color: #eee;
+      /*创造BFC避免高度坍塌*/
+      /*也可以增加一个空白的高度为0的清除浮动的div*/
+      overflow: hidden;
+    }
+    /*头部样式*/
+    .header{
+      width: 100%;
+      height: 50px;
+      background-color: #ffc107;
+    }
+    /*主体样式*/
+    .mian-wrap {
+      /*主体内容先加载因此设置为float才能让侧边栏移动到左侧*/
+      /*否则侧边栏将被div元素排挤到下一行*/
+      float: left;
+      /*float元素必须指定宽度*/
+      /*否则将按内容自适应宽度*/
+      /*只有div才能让宽度默认撑到最大*/
+      width: 100%;
+    }
+    .mian {
+      /*为侧栏预留位置*/
+      margin-left: 130px;
+      margin-right: 150px;
+      height: 300px;
+      background-color: #03a9f4;
+    }
+    /*侧边栏*/
+    .sidebar {
+      height: 200px;
+      background-color: #673ab7;
+    }
+    /*左浮动*/
+    .left {
+      float: left;
+      width: 130px;
+      margin-left: -100%;
+    }
+     /*右浮动*/
+    .right {
+      float: right;
+      width: 150px;
+      margin-left: -100%;
+    }
+    /*图片居中*/
+    .img-wrap {
+      /*inline元素会紧跟着一个空白的字符*/
+      /*把字符大小设置为0就没有影响了*/
+      font-size: 0;
+      line-height: 120px;
+      /*水平居中*/
+      text-align: center;
+    }
+    img {
+      /*垂直居中*/
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<div class="bg">
+  <!-- 头部 -->
+  <div class="header">header</div>
+  <!-- 主体内容 -->
+  <div class="mian-wrap">
+    <div class="mian">main</div>
+  </div>
+  <!-- 左侧栏 -->
+  <div class="sidebar left">
+    <div class="img-wrap">
+      <img src="github.png" alt="github" width="100">
+    </div>
+  </div>
+  <!-- 右侧栏 -->
+  <div class="sidebar right">sidebar</div>
+</div>
+</body>
+</html>
