@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset=utf-8>
+  <meta name=description content="">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <style type="text/css">
+    html {
+      padding: 0;
+      margin: 0;
+    }
+    body{
+      height: 2000px;
+      overflow: auto;
+      padding: 0;
+      margin: 0;
+    }
+    .circle2 {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #a293b0;
+      -webkit-transform: translate(-50%,-50%);
+         -moz-transform: translate(-50%,-50%);
+          -ms-transform: translate(-50%,-50%);
+           -o-transform: translate(-50%,-50%);
+              transform: translate(-50%,-50%);
+    }
+    .circle1 {
+      width: 50px;
+      height: 50px;
+      border: 10px #ffc107 solid;
+      border-radius: 50%;
+      background-color: white;
+    }
+    .banner {
+      position: static;
+      top: 160px;
+      width: 100%;
+      height: 60px;
+      color: white;
+      background-color: #03a9f4;
+    }
+    .backTop {
+      display: none;
+      position: fixed;
+      bottom: 10px;
+      right: 50px;
+      width: 100px;
+      height: 40px;
+      line-height: 40px;
+      background-color: #eee;
+      text-align: center;
+      text-decoration: none;
+    }
+    .square {
+      width: 0;
+      height: 0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-bottom: 60px solid #232739;
+      border-top: 0;
+    }
+    .ulist {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .ulist > li {
+      display: block;
+      width: 4em;
+      height: 3em;
+      background-color: lightblue;
+      text-align: center;
+      margin: 1em;
+    }
+    #data-lazyLoad {
+      width: 100%;
+      height: 1000px;
+    }
+    #lazyLoad img {
+      display: block;
+      width: 600px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+<div style="width: 100%;height: 160px;">
+    <ul>本页面展示了以下内容：
+        <li>使用js模拟sticky定位</li>
+        <li>滚动页面会出现返回顶部的按钮</li>
+        <li>打开控制台会看到使用Promise通过ajax请求的返回内容</li>
+        <li>一个使用border绘制的圆形</li>
+        <li>一个使用fixe居中定位的圆</li>
+        <li>一个使用border绘制的三角形</li>
+    </ul>
+  </div>
+<div class="banner">模拟sticky定位</div>
+<div class="circle1"></div>
+<div class="circle2"></div>
+<div class="square"></div>
+<div>
+  <ul class="ulist">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+  </ul>
+</div>
+<button class="backTop">回到顶部</button>
+<div id="lazyLoad">
+  <img alt="" data-src="D:/WJoan.github.io/img/git(1).jpg" src="D:/WJoan.github.io/img/git(1).jpg">
+  <img alt="" src="D:/WJoan.github.io/img/git(1).jpg" data-src="http://img5.imgtn.bdimg.com/it/u=4244789527,2286705620&fm=200&gp=0.jpg">
+  <img alt="" src="D:/WJoan.github.io/img/git(1).jpg" data-src="http://img5.imgtn.bdimg.com/it/u=4233531470,1753260751&fm=27&gp=0.jpg">
+  <img alt="" src="D:/WJoan.github.io/img/git(1).jpg" data-src="http://img3.imgtn.bdimg.com/it/u=4271053251,2424464488&fm=27&gp=0.jpg">
+</div>
+<script type="text/javascript">
+  // js 模拟 position:sticky 滚动效果
+  var banner = document.getElementsByClassName('banner')[0];
+  var backTop = document.getElementsByClassName('backTop')[0];
+  var timer = null;
+
+  window.addEventListener('scroll', scroll);
+  backTop.onclick = function (e) {
+    timer = setInterval(()=>{
+      document.body.scrollTop += (- document.body.scrollTop / 5);
+    }, 10);
+    this.disabled = true;
+  }
+
+  function scroll(){
+    var top = document.body.scrollTop;
+    if(top === 0){
+      clearInterval(timer);
+      backTop.disabled = false;
+    }
+
+    if(top > 160){
+      banner.style.position = 'fixed';
+      banner.style.top = '0';
+      backTop.style.display = 'inline-block';
+    }else{
+      banner.style.position = 'static';
+      backTop.style.display = 'none';
+    }
+   // 注意: window.innerWidth 和 window.innerHeight 可以获得页面可见区域的宽和高.
+  }
+
+  // Ajax Promise 写法
+  function getURL(URL) {
+      return new Promise(function (resolve, reject) {
+          var req = new XMLHttpRequest();
+          req.open('GET', URL, true);
+          req.onload = function () {
+              if (req.status === 200) {
+                  resolve(req.responseText);
+              } else {
+                  reject(new Error(req.statusText));
+              }
+          };
+          req.onerror = function () {
+              reject(new Error(req.statusText));
+          };
+          req.send();
+      });
+  }
+  
+  var URL = "http://httpbin.org/get";
+  getURL(URL).then(function onFulfilled(value){
+      console.log(value);
+  }).catch(function onRejected(error){
+      console.error(error);
+  });
+
+  // 懒加载
+  (function(){
+    var imgList = document.images,
+        delay,
+        offset = 0,
+        time = 200,
+        _selector = document.getElementById('lazyLoad');
+
+    // 判断是否显示element
+    function _isShow (el) {
+      var box = el.getBoundingClientRect();
+      return ( (box.top >= 0 && box.left <= 0 && box.top) <= 
+               (window.innerHeight || document.documentElement.clientHeight  + parseInt(offset)
+              ));
+    }
+
+    // 显示图片
+    function _loadImage () {
+      var list = Array.prototype.slice.call(imgList);
+      list.forEach(function(item){
+        if( _isShow(item) ){
+          item.src = item.getAttribute('data-src');
+        }else{
+          console.log('lazy...')
+        }
+      })
+    }
+
+    // 节流
+    function _delay () {
+      clearTimeout(delay);
+      delay = setTimeout(function(){
+        _loadImage();
+      }, time);
+    }
+
+    // 懒加载
+    function lazyLoad () {
+      window.addEventListener('scroll',_delay,false);
+    }
+
+    lazyLoad();
+
+  })();
+
+</script>
+</body>
+</html>
