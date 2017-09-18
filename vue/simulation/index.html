@@ -12,5 +12,62 @@
   <output name="out"></output>
 </div>
 <script src="vue_simulation.js"></script>
+<script type="text/javascript">
+  var input = 'YiErSan';
+var result = [];
+var EnNum = {
+    One: 'Yi',
+    Two: 'Er',
+    Three: 'San',
+    Four: 'Si',
+    Five: 'Wu',
+    Six: 'Liu',
+    Seven: 'Qi',
+    Eight: 'Ba',
+    Nine: 'Jiu',
+    Zero: 'Ling'
+};
+var ChNum = {
+    Yi: 'One',
+    Er: 'Two',
+    San: 'Three',
+    Si: 'Four',
+    Wu: 'Five',
+    Liu: 'Six',
+    Qi: 'Seven',
+    Ba: 'Eight',
+    Jiu: 'Nine',
+    Ling: 'Zero'
+}
+
+var words = input.match(/[A-Z][a-z]+/g);
+function isEn(word){
+    return (EnNum[word] !== undefined);
+}
+function isCh(word){
+    return (ChNum[word] !== undefined);
+}
+function switchWords(words, obj){
+    var len = words.length,
+        r = [];
+    for(var i = 0; i <len; i++){
+        if(obj[words[i]]!== undefined){
+            r.push(obj[words[i]]);
+        }else{
+            return 'ERROR';
+        }
+    }
+    return r.join('');
+}
+if(isEn(words[0])){
+    result = switchWords(words, EnNum);
+}else if(isCh(words[0])){
+    result = switchWords(words, ChNum);
+}else{
+    result = 'ERROR';
+}
+
+console.log(result);
+</script>
 </body>
 </html>

@@ -16,6 +16,9 @@ function nodeToFragment (node, vm) {
   return vdom;
 }
 
+// 被观察者类
+// 维护一个数组保存观察对象
+// 提供注册和通知的方法
 function Dep () {
   this.subs = [];
 }
@@ -30,6 +33,9 @@ Dep.prototype = {
   }
 }
 
+// 观察者类
+// 初始化的时候触发vm中数据的getter完成注册
+// 提供update方法，用于模板的更新
 function Watcher (vm, node, name) {
   Dep.target = this;
   this.name = name;
@@ -55,6 +61,8 @@ Watcher.prototype = {
 }
 
 // 解析模板
+// 通过正则匹配vue的模板，新建观察者对象，绑定到数据上
+// 事件绑定，用户操作时候及时更新vm数据（而不是直接更新模板）
 function compile (node, vm) {
   var reg = /\{\{(.*)\}\}/;
 
@@ -85,7 +93,9 @@ function compile (node, vm) {
   }
 }
 
-// 定义对象属性的get与set
+// 通过defineProperty数据劫持
+// 定义对象属性的getter与setter
+// 为每一个数据绑定一个被观察者对象
 function defineReactive(obj, key, val) {
   // 管理所有与该参数有关的观察者
   var dep = new Dep();
@@ -122,7 +132,7 @@ function Vue (options) {
   // 让vm监听每一个挂载的数据
   observe(data, this);
 
-  // 创建虚拟
+  // 创建虚拟DOM节点
   // 避免频繁修改文档
   var id = options.el;
   var vdom = nodeToFragment(document.getElementById(id), this);
